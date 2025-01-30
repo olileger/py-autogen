@@ -1,0 +1,24 @@
+{
+    "name": "Python Codespace",
+    "image": "mcr.microsoft.com/devcontainers/python:3.13",
+    "features":
+    {
+        "ghcr.io/devcontainers/features/azure-cli:1":
+        {
+            "version": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat"
+            ],
+            "settings":
+            {
+                "python.pythonPath": "/usr/local/bin/python"
+            }
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt"
+}
