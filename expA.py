@@ -9,9 +9,6 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 async def get_weather(city: str) -> str:
     return f"The weather in {city} is 73 degree and sunny."
 
-async def other_func(p: str):
-    print(f"On passe ici avec le param: {p}.")
-
 async def main() -> None:
     w_agent = AssistantAgent(name="Weather_Agent",
                              model_client=OpenAIChatCompletionClient(model="gpt-4o-2024-08-06", api_key=os.getenv("API_KEY")),
