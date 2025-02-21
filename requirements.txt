@@ -104,6 +104,7 @@ python-multipart==0.0.18
 python-pptx==1.0.2
 python-socketio==5.12.1
 pytz==2025.1
+PyYAML==6.0.2
 pyzmq==26.2.1
 regex==2024.11.6
 requests==2.32.3
