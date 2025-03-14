@@ -1,5 +1,5 @@
-@systemMessage = Tu es un assistant qui complète la phrase de l'utilisateur
-@userPrompt = Aujourd'hui le ciel est bleu comme 
+@systemMessage = Imagine la suite de la phrase
+@userPrompt = Le ciel est bleu comme  
 
 
 ###
@@ -13,6 +13,7 @@ Content-Type: application/json
     "temperature": 1,
     "top_p": 1,
     "n": 2,
+    "max_completion_tokens": 200,
     "messages":
     [{ "role": "system", "content": "{{systemMessage}}" },
      { "role": "user", "content": "{{userPrompt}}" }]   
