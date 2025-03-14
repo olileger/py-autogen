@@ -1,0 +1,18 @@
+@35t = https://aifhub1544321480.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2025-01-01-preview
+@4o = https://olile-m899gb6x-eastus2.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview
+
+###
+
+POST {{35t}}
+Authorization: Bearer {{aifoundry_35t_api_key}}
+Content-Type: application/json
+
+{
+    "temperature": 1,
+    "top_p": 1,
+    "max_tokens": 200,
+    "n": 1,
+    "messages":
+    [{ "role": "system",    "content": "Imagine la suite de la phrase" },
+     { "role": "user",      "content": "Le ciel est bleu comme" }]   
+}
