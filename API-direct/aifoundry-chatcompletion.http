@@ -1,9 +1,7 @@
-@35t = https://aifhub1544321480.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2025-01-01-preview
-@4o = https://olile-m899gb6x-eastus2.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview
 
 ###
 
-POST {{4o}}
+POST https://olile-m899gb6x-eastus2.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview
 Authorization: Bearer {{aifoundry_4o_api_key}}
 Content-Type: application/json
 
