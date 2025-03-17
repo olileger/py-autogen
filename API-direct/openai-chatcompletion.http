@@ -1,6 +1,3 @@
-@systemMessage = Imagine la suite de la phrase
-@userPrompt = Le ciel est bleu comme  
-
 
 ###
 
@@ -12,9 +9,9 @@ Content-Type: application/json
     "model": "gpt-4o",
     "temperature": 1,
     "top_p": 1,
-    "n": 2,
+    "n": 1,
     "max_completion_tokens": 200,
     "messages":
-    [{ "role": "system", "content": "{{systemMessage}}" },
-     { "role": "user", "content": "{{userPrompt}}" }]   
+    [{ "role": "system",    "content": "Imagine la suite de la phrase" },
+     { "role": "user",      "content": "Le ciel est" }]   
 }

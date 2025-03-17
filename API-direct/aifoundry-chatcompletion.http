@@ -3,16 +3,16 @@
 
 ###
 
-POST {{35t}}
-Authorization: Bearer {{aifoundry_35t_api_key}}
+POST {{4o}}
+Authorization: Bearer {{aifoundry_4o_api_key}}
 Content-Type: application/json
 
 {
     "temperature": 1,
     "top_p": 1,
-    "max_tokens": 200,
     "n": 1,
+    "max_tokens": 200,    
     "messages":
     [{ "role": "system",    "content": "Imagine la suite de la phrase" },
-     { "role": "user",      "content": "Le ciel est bleu comme" }]   
+     { "role": "user",      "content": "Le ciel est" }]   
 }
