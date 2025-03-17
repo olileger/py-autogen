@@ -11,6 +11,8 @@ Content-Type: application/json
     "n": 1,
     "max_tokens": 200,    
     "messages":
-    [{ "role": "system",    "content": "Imagine la suite de la phrase" },
-     { "role": "user",      "content": "Le ciel est" }]   
+    [{
+        "role": "user",
+        "content": "Imagine la suite de la phrase: Le ciel est"
+    }]   
 }
