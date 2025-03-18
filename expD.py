@@ -46,7 +46,7 @@ async def main():
     await Console(team.run_stream(task=
     """
     Analyse l'état du marché de la GenAI et les opportunités business qui en découlent.
-    Tu proposes ta réponse sous la forme d'une liste de 5 points.
+    Tu proposes ta réponse sous la forme d'une liste de 5 points de 3 phrases par point.
     """))
 
 asyncio.run(main())
