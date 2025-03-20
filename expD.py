@@ -6,7 +6,7 @@ import os
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.conditions import TextMentionTermination
-from autogen_agentchat.teams import RoundRobinGroupChat
+from autogen_agentchat.teams import RoundRobinGroupChat, SelectorGroupChat
 from autogen_agentchat.ui import Console
 
 
@@ -35,11 +35,24 @@ reviewer = AssistantAgent(
     """,
 )
 
+other_reviewer = AssistantAgent(
+    "AutreCritique",
+    model_client=gpt4o,
+    system_message=
+    """
+    Tu produits un feedback par rapport à un texte donné.
+    """
+)
+
 # On créé une condition d'arrêt pour le groupe de discussion.
 approved = TextMentionTermination("## FIN ##")
 
 # On créé le groupe de discussion avec les deux agents.
-team = RoundRobinGroupChat([consultant, reviewer], termination_condition=approved)
+# team = RoundRobinGroupChat([consultant, reviewer], termination_condition=approved)
+team = SelectorGroupChat([consultant, reviewer, other_reviewer],
+                         gpt4o,
+                         termination_condition=approved,
+                         max_turns=10)
 
 # On lance le groupe de discussion avec une tâche initiale.
 async def main():
