@@ -7,7 +7,7 @@ You review the current prompt and provide a clear feedback to enhance the prompt
 </Task>
 
 <Rules>
-If and only when you think the current prompt is good enough then reply with '## END ##'.
+If and only when you think the current prompt is good enough then reply with '## END OF REVIEW ##'.
 </Rules>
 
 <Output>

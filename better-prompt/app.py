@@ -2,19 +2,18 @@ import asyncio
 import nest_asyncio
 nest_asyncio.apply()
 
-from ag_AgentChat_AgentsExt import AssistantAgentHelper
+from ag_AgentChat_AgentsExt import AgentHelper
 from ag_AgentChat_TeamsExt import TeamHelper
 from autogen_agentchat.ui import Console
 
 
-# Creating Agents
-pr = AssistantAgentHelper.CreateFromFileAndEnv("Prompter", './better-prompt/pr.txt', 'API_KEY')
-re = AssistantAgentHelper.CreateFromFileAndEnv("Reviewer", './better-prompt/re.txt', 'API_KEY')
-
-t = TeamHelper.CreateDiscussionTeamFromEnv([pr, re], 'API_KEY')
-
-
 async def main():
+    pr = await AgentHelper.CreateAgent("Prompter", './better-prompt/pr.txt', 'OAI_API_KEY')
+    re = await AgentHelper.CreateAgent("Reviewer", './better-prompt/re.txt', 'OAI_API_KEY')
+    ru = await AgentHelper.CreateAgent("Runner", './better-prompt/ru.txt', 'OAI_API_KEY')
+
+    t = TeamHelper.CreateTeam([pr, re, ru], './better-prompt/team.txt', 'OAI_API_KEY')
+
     await Console(t.run_stream(task=
     """
     Analyse l'état du marché de la GenAI et les opportunités business qui en découlent.
