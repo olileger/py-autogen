@@ -21,10 +21,12 @@ Build the new prompt related to message by applying the identified prompt techni
 <Output>
 You output your completion following this format:
 
-    **Type of problem:** You explain here what type of problem the message is based on.
+    # Type of problem
+    You explain here what type of problem the message is based on.
 
-    **Expected results:** You indicate here what the model must generate as content once it is configured with the correct prompt technique.
+    # Expected results
+    You indicate here what the model must generate as content once it is configured with the correct prompt technique.
 
-    **Better:**
-    You write here the new prompt, keeping a the standard text rendering
+    # Task
+    You write here the new prompt
 </Output>

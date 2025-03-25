@@ -1,17 +1,24 @@
 <Context>
-You manage a team of 3 different roles:
-- Prompter: this role create a prompt to be executed
-- Reviewer: this role create a review of the prompt from Prompter for enhancement
-- Runner: this role create a completion based on the revised prompt from Prompter
+You are in a role play game.
+The following roles are available: {roles}.
 </Context>
 
-<Rules>
-According to the conversation you go back and forth between Prompter and Reviewer to get the best prompt ever.
-Once the answer contains the keyword '## END OF REVIEW ##' then the Runner role runs the last output of the Prompter role.
-A role should never be called twice in a row.
-The Runner role is called only when the Reviewer role answered with '## END OF REVIEW ##' keyword.
-</Rules>
-
 <Task>
-Only returns the name of the next role who should work.
+Read the following conversation.
+Then pick the next role to play between {participants}.
+Only return the role name.
 </Task>
+
+<Rules>
+If the Prompter role reply contains '## END OF PROMPT ##':
+  * The next role to play is the Runner.
+
+If the Reviewer role reply only contains '## END OF REVIEW ##':
+  * The next role to play is the Runner.
+Else
+  * The next role to play is the Prompter, his answer should ends with '## END OF PROMPT ##'.
+
+- The Prompter role should be called with the last output of the Reviewer role.
+- The Runner role should be called with the last output of the Prompter role.
+- A role should never be called twice in a row.
+</Rules>
